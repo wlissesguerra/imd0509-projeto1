@@ -27,23 +27,29 @@ class _CursoListaState extends State<CursoLista> {
       itemCount: widget.cursos.length,
       itemBuilder: (context, index) {
         final curso = widget.cursos[index];
-        return Card(
-          margin: EdgeInsets.only(bottom: 32),
-          elevation: 1,
-          child: InkWell(
-            onTap: () => _visualizarCurso(curso),
-            child: Column(
-              children: [
-                Image.network(curso.foto),
-                Padding(
-                  padding: EdgeInsets.all(16),
-                  child: Text(
-                    curso.titulo,
-                    style: GoogleFonts.lato(
-                        textStyle: Theme.of(context).textTheme.headline4),
+        return Container(
+          child: Card(
+            margin: EdgeInsets.only(bottom: 32),
+            elevation: 1,
+            child: InkWell(
+              onTap: () => _visualizarCurso(curso),
+              child: Column(
+                children: [
+                  Image.network(
+                    curso.foto,
+                    fit: BoxFit.fill,
+                    width: double.infinity,
                   ),
-                ),
-              ],
+                  Padding(
+                    padding: EdgeInsets.all(16),
+                    child: Text(
+                      curso.titulo,
+                      style: GoogleFonts.lato(
+                          textStyle: Theme.of(context).textTheme.headline4),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         );

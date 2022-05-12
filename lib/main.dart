@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ThemeData()
             .colorScheme
-            .copyWith(primary: Colors.cyan, secondary: Colors.grey),
+            .copyWith(primary: Colors.cyan, secondary: Colors.cyan),
         textTheme: ThemeData.light().textTheme.copyWith(
               bodyText1: const TextStyle(
                 fontSize: 16,

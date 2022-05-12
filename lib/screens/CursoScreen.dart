@@ -31,7 +31,9 @@ class _CursoScreenState extends State<CursoScreen> {
               fit: BoxFit.fill,
               width: double.infinity,
             ),
-            AulasLista(DATA_AULAS),
+            AulasLista(DATA_AULAS
+                .where((element) => (element.cursoId == curso.id))
+                .toList()),
           ],
         ),
       ),
